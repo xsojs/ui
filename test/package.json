@@ -1,0 +1,33 @@
+{
+    "name": "@xso/ui-test",
+    "version": "0.1.0",
+    "description": "UI Components Test.",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Eduardo Velasques",
+    "license": "MIT",
+    "repository": "xsojs/ui-test",
+    "keywords": [
+        "xso",
+        "xsojs"
+    ],
+    "dependencies": {
+        "@xso/com": "link:..\\..\\com",
+        "@xso/css": "link:..\\..\\css",
+        "@xso/router": "link:..\\..\\router",
+        "@xso/trigger": "link:..\\..\\trigger",
+        "@xso/ui": "link:..",
+        "@xso/ui-test": "file:"
+    },
+    "devDependencies": {
+        "vite": "^4.5.5"
+    },
+    "files": [
+        "src"
+    ]
+}
