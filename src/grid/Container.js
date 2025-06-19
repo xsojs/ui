@@ -5,9 +5,12 @@ import baseProps from "../utils/baseProps";
 import Row from "./Row";
 
 function Container(props) {
-    const { span, textCenter, _ } = props;
+    const { fluid, span, textCenter, _ } = props;
     com.ensureType(_, Row);
     let cssClass = '';
+    if (fluid) {
+        cssClass = 'container-fluid';
+    }
     if (span) {
         if (isString(span)) {
             cssClass += ` container-${span}`;
