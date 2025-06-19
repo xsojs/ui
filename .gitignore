@@ -1,3 +1,5 @@
+.idea
+
 # Logs
 logs
 *.log
@@ -110,4 +112,5 @@ typings/
 
 package-lock.json
 pnpm-lock.yaml
-
+bun.lock
+yarn.lock
