@@ -11,6 +11,9 @@ function Col(props) {
     } = props;
     const {order = null, _} = props;
     let cssClass = 'col';
+    if (auto) {
+        cssClass += '-auto';
+    }
     for (const config of [
         { class: 'col', value: span}, {class: 'offset', value: offset}
     ]) {
