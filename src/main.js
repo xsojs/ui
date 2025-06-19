@@ -35,7 +35,16 @@ export { default as InputGroup } from "./form/InputGroup";
 export { default as Validity } from "./form/Validity";
 
 export { default as Badge } from "./badge/Badge";
+
 export { default as Breadcrumb } from "./breadcrumb/Breadcrumb";
+
 export { default as Button } from "./button/Button";
+export { default as ButtonGroup } from "./button/Group";
+export { default as ButtonToolbar } from "./button/Toolbar";
+
+export { default as Navbar } from "./nav/Bar";
+export { default as Nav } from "./nav/Nav";
+
+export { default as Dropdown } from "./dropdown/Menu";
 
 //export { default as Modal } from "./modal/Modal";
