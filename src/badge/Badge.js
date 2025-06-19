@@ -5,20 +5,16 @@ import baseProps from "../utils/baseProps";
 function Badge(props) {
     const {
         mode,
-        light = false,
         pill = false,
         link,
         _
     } = props;
     let cssClass = 'badge';
     if (mode) {
-        cssClass += ` badge-${mode}`;
+        cssClass += ` text-bg-${mode}`;
     }
-    if (light == true) {
-        cssClass += ` badge-light`;
-    }
-    if (pill == true) {
-        cssClass += ` badge-pill`;
+    if (pill) {
+        cssClass += ` rounded-pill`;
     }
     this.view(()=> {
         if (link) {
