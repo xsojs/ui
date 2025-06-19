@@ -1,6 +1,9 @@
 
 function baseProps(props, base = {}) {
     const newProps = {};
+    if (props.id) {
+        newProps['id'] = props.id;
+    }
     if (props.class) {
         if (base.class && base.class != '') {
             newProps['class'] = base.class.trim() +' '+ props.class.trim();
