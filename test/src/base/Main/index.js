@@ -3,25 +3,34 @@ import css from "@xso/css";
 
 import { Router, Route } from "@xso/router";
 
+import SideMenu from '../SideMenu';
 import Home from '../../pages/Home';
 
-import styles from "./styles";
+import style from "./style.js";
+import {Container, Row, Col} from "@xso/ui";
 
-function Main() {
+function Main({_}) {
     this.view(()=> [
-        { main: {
-            class: css(styles.main),
-            _: [
-                { [Router]: {
-                    routes: [
-                        { [Route]: {
-                            path: '/',
-                            component: Home
-                        } }
-                    ]
-                } }
-            ]
-        } }
+        { [Container]: {
+            fluid: true,
+            _: { [Row]: {
+                class: 'flex-nowrap',
+                _: [
+                    { [Col]: {
+                        auto: true,
+                        span: {md: 3, xl: 2, sm: 2},
+                        class: 'px-sm-2 px-0 bg-dark',
+                        _: { [SideMenu]: { } }
+                    } }, // Col
+                    { [Col]: {
+                        _: { main: {
+                            class: css(style.main),
+                            _
+                        } } // main
+                    } } // Col
+                ]
+            } } // Row
+        } }, // Container
     ]);
 }
 
