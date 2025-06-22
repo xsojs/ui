@@ -1,19 +1,10 @@
 import css from "@xso/css";
+import "highlight.js/styles/github-dark.css";
 import vars from "./vars";
 
 css.def('*', {
     fontFamily: 'Roboto',
     fontSize: '20px'
-})
-
-css.def('a', {
-    color: vars.secondary,
-    textDecoration: 'none',
-    textShadow: `0 0 2px ${vars.secondary}`,
-    ':hover': {
-        color: vars.primary,
-        textShadow: `0 0 2px ${vars.secondary}, 0 0 2px ${vars.secondary}`,
-    }
 })
 
 const theme = {
@@ -62,9 +53,6 @@ const theme = {
         maxWidth: '1000px',
         margin: '0 auto',
         padding: '20px',
-    },
-    blockSpace: {
-        margin: '40px 0',
     },
     title: {
         color: vars.secondary,
