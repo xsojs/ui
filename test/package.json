@@ -4,9 +4,9 @@
     "description": "UI Components Test.",
     "type": "module",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build",
-        "preview": "vite preview",
+        "dev": "bunx --bun vite",
+        "build": "bunx --bun vite build",
+        "preview": "bunx --bun vite preview",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Eduardo Velasques",
@@ -22,7 +22,8 @@
         "@xso/router": "link:..\\..\\router",
         "@xso/trigger": "link:..\\..\\trigger",
         "@xso/ui": "link:..",
-        "@xso/ui-test": "file:"
+        "@xso/ui-test": "file:",
+        "highlight.js": "^11.11.1"
     },
     "devDependencies": {
         "vite": "^4.5.5"
