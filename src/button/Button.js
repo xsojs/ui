@@ -4,6 +4,7 @@ import baseProps from "../utils/baseProps";
 
 function Button(props) {
     const {
+        tag = 'button',
         type = 'button',
         role = 'button',
         mode,
@@ -52,9 +53,28 @@ function Button(props) {
         extraProps['aria-expanded'] = 'false';
     }
     this.view(()=> {
-        if (type === 'link') {
+        if (tag === 'a') {
+            const { href } = props;
+            if (href) {
+                extraProps.href = href;
+            }
             return [
                 { a: {
+                    ...extraProps,
+                    ...baseProps(props, { class: cssClass }),
+                    ...disabledProps,
+                    _
+                } }
+            ];
+        }
+        if (tag === 'input') {
+            const { value } = props;
+            if (value) {
+                extraProps.value = value;
+            }
+            return [
+                { input: {
+                    type,
                     ...extraProps,
                     ...baseProps(props, { class: cssClass }),
                     ...disabledProps,
