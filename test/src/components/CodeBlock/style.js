@@ -1,12 +1,12 @@
-import theme from "../../styles/theme";
-
 const styles = {
     codeBlock: {
+        overflow: 'auto',
         padding: '20px',
         fontFamily: 'Roboto Mono',
-        overflow: 'auto',
+        whiteSpace: 'pre-wrap',
         '> *': {
             fontFamily: 'Roboto Mono',
+            whiteSpace: 'pre-wrap',
         }
     }
 };

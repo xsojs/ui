@@ -29,10 +29,12 @@ function CodeBlock({source, language = 'javascript'}) {
         hljs.highlightElement(ref.current);
     });
     this.view(() => [
-        ref.set({ pre: {
-            class: css(style.codeBlock) + ' language-'+ language,
-            _: finalSource.trim()
-        } })
+        ref.set({
+            pre: {
+                class: css(style.codeBlock) + ' language-' + language,
+                _: finalSource.trim()
+            }
+        })
     ]);
 }
 
