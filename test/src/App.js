@@ -5,6 +5,7 @@ import Footer from "./base/Footer";
 import Main from "./base/Main";
 import {Route, Router} from "../../../router/src/main.js";
 import Home from "./pages/Home";
+import Alert from "./pages/Alert";
 import Badge from "./pages/Badge";
 import Breadcrumb from "./pages/Breadcrumb";
 import Button from "./pages/Button";
@@ -21,6 +22,10 @@ function App() {
                             component: Home
                         } }, // Route
                         { [Route]: {
+                            path: '/alert',
+                            component: Alert
+                        } }, // Route
+                        { [Route]: {
                             path: '/badge',
                             component: Badge
                         } }, // Route
@@ -29,9 +34,9 @@ function App() {
                             component: Breadcrumb
                         } }, // Route
                         { [Route]: {
-                                path: '/button',
-                                component: Button
-                            } }, // Route
+                            path: '/button',
+                            component: Button
+                        } }, // Route
                     ]
                 } }, // Router
                 { [Footer]: {} },

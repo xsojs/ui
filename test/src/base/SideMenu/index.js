@@ -1,9 +1,6 @@
 import com from "@xso/com";
-import css from "@xso/css";
 import { navigateTo } from "@xso/router";
 import {Nav} from "@xso/ui";
-
-import style from "./style.js";
 
 function SideMenu() {
     this.view(() => [
@@ -13,6 +10,14 @@ function SideMenu() {
                 pills: true,
                 class: 'flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start',
                 _: [
+                    { [Nav.Item]: {
+                        _: { [Nav.Link]: {
+                            class: 'align-middle px-0',
+                            href: '/alert',
+                            onClick: (e)=> { e.preventDefault(); navigateTo('/alert'); },
+                            _: 'Alert',
+                        } } // Nav.Link
+                    } }, // Nav.Item
                     { [Nav.Item]: {
                         _: { [Nav.Link]: {
                             class: 'align-middle px-0',
