@@ -1,5 +1,5 @@
 import com from '@xso/com';
-import ExampleBlock from "../../components/ExampleBlock/index.js";
+
 import {Button} from "@xso/ui";
 
 import Base from "./Base";
@@ -7,6 +7,8 @@ import Variants from "./Variants";
 import ButtonTags from "./ButtonTags";
 import OutlineButtons from "./OutlineButtons";
 import Sizes from "./Sizes";
+import DisabledState from "./DisabledState";
+import BlockButtons from "./BlockButtons";
 
 function ButtonPage() {
     this.view(() => [
@@ -19,6 +21,8 @@ function ButtonPage() {
         { [ButtonTags]: { } },
         { [OutlineButtons]: { } },
         { [Sizes]: { } },
+        { [DisabledState]: { } },
+        { [BlockButtons]: { } },
     ]);
 }
 
