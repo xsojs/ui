@@ -34,6 +34,8 @@ export { default as Floating } from "./form/Floating";
 export { default as InputGroup } from "./form/InputGroup";
 export { default as Validity } from "./form/Validity";
 
+export { default as Alert } from "./alert/Alert";
+
 export { default as Badge } from "./badge/Badge";
 
 export { default as Breadcrumb } from "./breadcrumb/Breadcrumb";
