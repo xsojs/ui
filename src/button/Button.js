@@ -34,7 +34,8 @@ function Button(props) {
     if (disabled === true) {
         cssClass += ' disabled';
         disabledProps.disabled = true;
-        disabledProps['aria-disabled'] = "true";
+        disabledProps['aria-disabled'] = 'true';
+        disabledProps.tabindex = '-1';
     }
     const extraProps = {
         role
