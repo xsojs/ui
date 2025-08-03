@@ -45,7 +45,7 @@ function SideMenu() {
                     { [Nav.Item]: {
                         _: { [Nav.Link]: {
                             class: 'align-middle px-0',
-                            href: '#',
+                            href: '/typography',
                             _: 'Typography',
                         } } // Nav.Link
                     } }, // Nav.Item
