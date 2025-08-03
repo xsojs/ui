@@ -9,6 +9,7 @@ import Alert from "./pages/Alert";
 import Badge from "./pages/Badge";
 import Breadcrumb from "./pages/Breadcrumb";
 import Button from "./pages/Button";
+import Typography from "./pages/Typography";
 
 function App() {
     this.view(() => [
@@ -36,6 +37,10 @@ function App() {
                         { [Route]: {
                             path: '/button',
                             component: Button
+                        } }, // Route
+                        { [Route]: {
+                            path: '/typography',
+                            component: Typography
                         } }, // Route
                     ]
                 } }, // Router
