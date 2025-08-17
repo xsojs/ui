@@ -44,6 +44,14 @@ function SideMenu() {
                     } }, // Nav.Item
                     { [Nav.Item]: {
                         _: { [Nav.Link]: {
+                                class: 'align-middle px-0',
+                                href: '/dropdown',
+                                onClick: (e)=> { e.preventDefault(); navigateTo('/dropdown'); },
+                                _: 'Dropdown',
+                            } } // Nav.Link
+                    } }, // Nav.Item
+                    { [Nav.Item]: {
+                        _: { [Nav.Link]: {
                             class: 'align-middle px-0',
                             href: '/typography',
                             _: 'Typography',
