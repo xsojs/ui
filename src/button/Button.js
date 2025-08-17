@@ -13,6 +13,7 @@ function Button(props) {
         block = false,
         disabled = false,
         dropdownToggle,
+        autoClose = null,
         ariaExpanded,
         _
     } = props;
@@ -46,6 +47,9 @@ function Button(props) {
         if (dropdownToggle === 'split') {
             cssClass += ' dropdown-toggle-split';
         }
+    }
+    if (autoClose !== null) {
+        extraProps['data-bs-auto-close'] = autoClose;
     }
     if (ariaExpanded === true) {
         extraProps['aria-expanded'] = 'true';
