@@ -22,6 +22,8 @@ function Group(props) {
             cssClass += ' dropend';
         } else if (drop === 'up') {
             cssClass += ' dropup';
+        } else if (drop === 'up-center') {
+            cssClass += ' dropup dropup-center';
         }
     }
     if (size) {
