@@ -18,6 +18,7 @@ export { default as H5 } from "./typography/H5";
 export { default as H6 } from "./typography/H6";
 export { default as Lead } from "./typography/Lead";
 export { default as Small } from "./typography/Small";
+export { default as List } from "./typography/List";
 
 export { default as Figure } from "./figure/Figure";
 
@@ -47,6 +48,6 @@ export { default as ButtonToolbar } from "./button/Toolbar";
 export { default as Navbar } from "./nav/Bar";
 export { default as Nav } from "./nav/Nav";
 
-export { default as Dropdown } from "./dropdown/Menu";
+export { default as Dropdown } from "./dropdown/Dropdown";
 
 //export { default as Modal } from "./modal/Modal";
