@@ -3,9 +3,9 @@ import com from "@xso/com";
 import baseProps from "../utils/baseProps";
 
 const Blockquote = com(function Blockquote(props) {
-    const { center = false, end = false, footer = null, _ } = props;
+    const { align = null, footer = null, _ } = props;
     this.view(()=> {
-        if (footer == null && center == false && end == false) {
+        if (footer == null && align == null) {
             return [
                 { blockquote: {
                     ...baseProps(props, { class: 'blockquote' }),
@@ -14,9 +14,9 @@ const Blockquote = com(function Blockquote(props) {
             ];
         }
         let cssClass = '';
-        if (center) {
+        if (align === 'center') {
             cssClass = 'text-center';
-        } else if (end) {
+        } else if (align === 'end') {
             cssClass = 'text-end';
         }
         return [
@@ -27,21 +27,14 @@ const Blockquote = com(function Blockquote(props) {
                         class: 'blockquote',
                         _
                     } },
-                    footer
+                    footer ? { figcaption: {
+                        class: 'blockquote-footer',
+                        _: footer
+                    } } : null
                 ]
             } }
         ];
     });
-});
-
-Blockquote.Footer = com(function Footer(props) {
-    const { _ } = props;
-    this.view(()=> [
-        { figcaption: {
-            ...baseProps(props, { class: 'blockquote-footer' }),
-            _
-        } }
-    ]);
 });
 
 export default Blockquote;
