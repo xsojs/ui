@@ -9,6 +9,7 @@ import Alert from "./pages/Alert";
 import Badge from "./pages/Badge";
 import Breadcrumb from "./pages/Breadcrumb";
 import Button from "./pages/Button";
+import Dropdown from "./pages/Dropdown";
 import Typography from "./pages/Typography";
 
 function App() {
@@ -37,6 +38,10 @@ function App() {
                         { [Route]: {
                             path: '/button',
                             component: Button
+                        } }, // Route
+                        { [Route]: {
+                            path: '/dropdown',
+                            component: Dropdown
                         } }, // Route
                         { [Route]: {
                             path: '/typography',
