@@ -18,8 +18,8 @@ function Main({_}) {
                 _: [
                     { [Col]: {
                         auto: true,
-                        span: {md: 3, xl: 2, sm: 2},
-                        class: 'px-sm-2 px-0 bg-dark',
+                        span: {md: 4, xl: 2, sm: 3},
+                        class: 'px-md-2 px-0 bg-dark',
                         _: { [SideMenu]: { } }
                     } }, // Col
                     { [Col]: {
