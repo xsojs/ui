@@ -93,6 +93,68 @@ function Lists() {
             export default com(ListExample);
             `
         } },
+        { h4: { _: 'Description list alignment' } },
+        { p: { _: 'Align terms and descriptions horizontally by using our grid system’s predefined classes (or semantic mixins). For longer terms, you can optionally add a .text-truncate class to truncate the text with an ellipsis.' } },
+        { [ExampleBlock]: {
+            example: [
+                { dl: {
+                    class: 'row',
+                    _: [
+                        { dt: { class: 'col-sm-3', _: 'Description lists' } },
+                        { dd: { class: 'col-sm-9', _: 'A description list is perfect for defining terms.' } },
+                        { dt: { class: 'col-sm-3', _: 'Term' } },
+                        { dd: { class: 'col-sm-9', _: [
+                                { p: { _: 'Definition for the term.' } },
+                                { p: { _: 'And some more placeholder definition text.' } }
+                        ] } },
+                        { dt: { class: 'col-sm-3', _: 'Another term' } },
+                        { dd: { class: 'col-sm-9', _: 'This definition is short, so no extra paragraphs or anything.' } },
+                        { dt: { class: 'col-sm-3 text-truncate', _: 'Truncated term is truncated' } },
+                        { dd: { class: 'col-sm-9', _: 'This can be useful when space is tight. Adds an ellipsis at the end.' } },
+                        { dt: { class: 'col-sm-3', _: 'Nesting' } },
+                        { dd: { class: 'col-sm-9', _: [
+                            { dl: { class: 'row', _: [
+                                { dt: { class: 'col-sm-4', _: 'Nested definition list' } },
+                                { dd: { class: 'col-sm-8', _: 'I heard you like definition lists. Let me put a definition list inside your definition list.' } },
+                            ] } }
+                        ] } },
+                    ]
+                } }
+            ],
+            code: `
+            import com from "@xso/com";
+            
+            function DescriptionListExample() { 
+                this.view(() => [
+                    { dl: {
+                        class: 'row',
+                        _: [
+                            { dt: { class: 'col-sm-3', _: 'Description lists' } },
+                            { dd: { class: 'col-sm-9', _: 'A description list is perfect for defining terms.' } },
+                            { dt: { class: 'col-sm-3', _: 'Term' } },
+                            { dd: { class: 'col-sm-9', _: [
+                                { p: { _: 'Definition for the term.' } },
+                                { p: { _: 'And some more placeholder definition text.' } }
+                            ] } },
+                            { dt: { class: 'col-sm-3', _: 'Another term' } },
+                            { dd: { class: 'col-sm-9', _: 'This definition is short, so no extra paragraphs or anything.' } },
+                            { dt: { class: 'col-sm-3 text-truncate', _: 'Truncated term is truncated' } },
+                            { dd: { class: 'col-sm-9', _: 'This can be useful when space is tight. Adds an ellipsis at the end.' } },
+                            { dt: { class: 'col-sm-3', _: 'Nesting' } },
+                            { dd: { class: 'col-sm-9', _: [
+                                { dl: { class: 'row', _: [
+                                    { dt: { class: 'col-sm-4', _: 'Nested definition list' } },
+                                    { dd: { class: 'col-sm-8', _: 'I heard you like definition lists. Let me put a definition list inside your definition list.' } },
+                                ] } }
+                            ] } },
+                        ]
+                    } }
+                ]);
+            }
+            
+            export default com(DescriptionListExample);
+            `
+        } },
     ]);
 }
 
