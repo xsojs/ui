@@ -2,9 +2,7 @@ import com from "@xso/com";
 
 import baseProps from "../utils/baseProps";
 
-import { isArray } from "@xso/utils";
-
-import Col from "./Col";
+import gridCSSClass from "../utils/gridCSSClass";
 
 function Row(props) {
     const {
@@ -13,13 +11,6 @@ function Row(props) {
         gutters = null, guttersX = null, guttersY = null,
         noGutters = false, _
     } = props;
-    if (isArray(_)) {
-        for (const i of _) {
-            com.ensureType(i, Col);
-        }
-    } else {
-        com.ensureType(_, Col);
-    }
     let cssClass = 'row';
     if (alignItems) {
         cssClass += ` align-items-${alignItems}`;
@@ -30,27 +21,12 @@ function Row(props) {
     if (justifyContent) {
         cssClass += ` justify-content-${justifyContent}`;
     }
-    for (const config of [
-        { class: 'row-cols', value: cols},
-        {class: 'g', value: gutters},
-        {class: 'gx', value: guttersX},
-        {class: 'gy', value: guttersY}
-    ]) {
-        if (config.value) {
-            if (isNumber(config.value) || isString(config.value)) {
-                cssClass += ` ${config.class}-${config.value}`;
-            } else if (isObject(config.value)) {
-                config.value = {...config.value};
-                if (config.value.default) {
-                    cssClass += ` ${config.class}-${config.value.default}`;
-                    delete config.value.default;
-                }
-                for (const key of Object.keys(config.value)) {
-                    cssClass += ` ${config.class}-${key}-${config.value[key]}`;
-                }
-            }
-        }
-    }
+    cssClass += gridCSSClass.loadDataConfigs([
+        {class: 'row-cols', data: cols},
+        {class: 'g', data: gutters},
+        {class: 'gx', data: guttersX},
+        {class: 'gy', data: guttersY}
+    ]);
     if (noGutters) {
         cssClass += ` g-0`;
     }
