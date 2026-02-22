@@ -28,6 +28,7 @@ export { default as Var } from "./code/Var";
 
 export { default as Table } from "./table/Table";
 
+export { default as Field } from "./form/Field";
 export { default as Label } from "./form/Label";
 export { default as Input } from "./form/Input";
 export { default as Text } from "./form/Text";
