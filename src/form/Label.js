@@ -1,12 +1,14 @@
 import com from "@xso/com";
 
 import baseProps from "../utils/baseProps";
+import gridSupport from "../utils/gridSupport";
+import gridCSSClass from "../utils/gridCSSClass";
 
 const Label = com(function Label(props) {
     const {
         button = false, mode = null, outline = false,
         check = false, floating = false,
-        _
+        colForm, _
     } = props;
     let cssClass = '';
     if (button) {
@@ -19,13 +21,18 @@ const Label = com(function Label(props) {
     } else if (!floating) {
         cssClass += ' form-label';
     }
-    this.view(()=> [
+    if (colForm) {
+        cssClass += ' col-form-label';
+        cssClass += gridCSSClass.col(props);
+    }
+    this.view(()=> gridSupport(
+        props,
         { label: {
             for: props.for,
             ...baseProps(props, { class: cssClass }),
             _
         } }
-    ]);
+    ));
 });
 
 export default Label;
