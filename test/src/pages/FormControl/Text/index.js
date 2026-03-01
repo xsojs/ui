@@ -1,6 +1,6 @@
 import com from '@xso/com';
 import ExampleBlock from "../../../components/ExampleBlock/index.js";
-import {Text, Input} from "@xso/ui";
+import {Field, Input} from "@xso/ui";
 
 function FormText() {
     this.view(() => [
@@ -10,21 +10,23 @@ function FormText() {
         { p: { _: 'Form text below inputs can be styled with .form-text. If a block-level element will be used, a top margin is added for easy spacing from the inputs above.' } },
         { [ExampleBlock]: {
             example: [
-                { [Input]: {
-                    label: 'Password',
-                    text: 'Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.',
+                { [Field]: {
+                    label: { _: 'Password' },
+                    input: { [Input]: { } },
+                    text: { _: 'Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.' },
                 } },
             ],
             code: `
             import com from "@xso/com";
             
-            import {Input} from "@xso/ui";
+            import {Field, Input} from "@xso/ui";
             
             function FormTextExample() { 
                 this.view(() => [
-                    { [Input]: {
-                        label: 'Password',
-                        text: 'Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.',
+                    { [Field]: {
+                        label: { _: 'Password' },
+                        input: { [Input]: { } },
+                        text: { _: 'Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.' },
                     } },
                 ]);
             }
@@ -35,12 +37,16 @@ function FormText() {
         { p: { _: 'Inline text can use any typical inline HTML element (be it a <span>, <small>, or something else) with nothing more than the .form-text class.' } },
         { [ExampleBlock]: {
                 example: [
-                    { [Input]: {
-                        col: 'auto',
+                    { [Field]: {
+                        row: { gutters: 3, alignItems: 'center' },
                         label: {
+                            colForm: true,
                             col: 'auto',
                             _: 'Password'
                         },
+                        input: {[Input]: {
+                            col: 'auto',
+                        }},
                         text: {
                             col: 'auto',
                             _: 'Must be 8-20 characters long.',
@@ -50,19 +56,23 @@ function FormText() {
                 code: `
                     import com from "@xso/com";
                     
-                    import {Input} from "@xso/ui";
+                    import {Field, Input} from "@xso/ui";
                     
                     function FormTextExample() { 
                         this.view(() => [
-                            { [Input]: {
-                                col: 'auto',
+                            { [Field]: {
+                                row: { gutters: 3, alignItems: 'center' },
                                 label: {
+                                    colForm: true,
                                     col: 'auto',
                                     _: 'Password'
                                 },
+                                input: {[Input]: {
+                                    col: 'auto',
+                                }},
                                 text: {
                                     col: 'auto',
-                                    'Must be 8-20 characters long.'
+                                    _: 'Must be 8-20 characters long.',
                                 },
                             } },
                         ]);
