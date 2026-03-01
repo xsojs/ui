@@ -13,7 +13,11 @@ function loadDataConfigs(configs) {
                     delete config.data.default;
                 }
                 for (const key of Object.keys(config.data)) {
-                    cssClass += ` ${config.class}-${key}-${config.data[key]}`;
+                    if (isBoolean(config.data[key])) {
+                        cssClass += ` ${config.class}-${key}`;
+                    } else {
+                        cssClass += ` ${config.class}-${key}-${config.data[key]}`;
+                    }
                 }
             }
         }
@@ -27,11 +31,22 @@ const gridCSSClass = {
         const {
             span = null, offset = null, order = null,
             marginLeftAuto = null, marginRightAuto = null,
+            xs, sm, md, lg, xl, xxl
         } = props;
         let cssClass = '';
         cssClass += loadDataConfigs([
             { class: 'col', data: span}, {class: 'offset', data: offset}
         ]);
+        (function $responsiveProps(key, value) {
+            if (value) {
+                if (isBoolean(value)) {
+                    cssClass += ` col-${key}`;
+                } else if (isNumber(value)) {
+                    cssClass += ` col-${key}-${value}`;
+                }
+            }
+            return $responsiveProps;
+        })('xs', xs)('sm', sm)('md', md)('lg', lg)('xl', xl)('xxl', xxl);
         for (const marginAuto of [
             { class: 'ml', data: marginLeftAuto}, {class: 'mr', data: marginRightAuto}
         ]) {
