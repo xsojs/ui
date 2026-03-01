@@ -1,13 +1,11 @@
 import com from "@xso/com";
 import css from "@xso/css";
 
-import { Router, Route } from "@xso/router";
-
 import SideMenu from '../SideMenu';
-import Home from '../../pages/Home';
+
+import {Container, Row, Col} from "@xso/ui";
 
 import style from "./style.js";
-import {Container, Row, Col} from "@xso/ui";
 
 function Main({_}) {
     this.view(()=> [
