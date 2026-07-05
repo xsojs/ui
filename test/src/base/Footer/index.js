@@ -6,6 +6,7 @@ import style from "./style.js";
 function Footer() {
     this.view(() => [
         { footer: {
+            class: css(style.footer),
             _: 'Footer...'
         } }
     ]);

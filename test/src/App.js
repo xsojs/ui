@@ -138,9 +138,9 @@ function App() {
                         } }, // Route
                     ]
                 } }, // Router
-                { [Footer]: {} },
             ]
         } }, // Main
+        { [Footer]: {} },
     ]);
 }
 

@@ -1,6 +1,9 @@
 import com from "@xso/com";
+import css from "@xso/css";
 import { navigateTo } from "@xso/router";
 import {Nav} from "@xso/ui";
+
+import style from "./style.js";
 
 const classNavTitle = 'mt-5 px-0';
 const classNavLink = 'px-0';
@@ -16,11 +19,11 @@ function SideMenu() {
         navigateTo(link);
     }
     this.view(() => [
-        { div: {
-            class: 'd-flex flex-column align-items-md-start px-3 pt-2 text-white min-vh-100',
+        { aside: {
+            class: 'px-3 pt-2 text-white '+ css(style.container),
             _: { [Nav]: {
                 pills: true,
-                class: 'flex-column mb-md-auto mb-0 align-items-md-start',
+                class: 'flex-column mb-md-auto mb-0 align-items-md-start '+ css(style.nav),
                 _: [
                     { [Nav.Item]: {
                         _: { h6: {

@@ -6,6 +6,7 @@ import style from "./style.js";
 function Header() {
     this.view(() => [
         { header: {
+            class: css(style.header),
             _: 'Header...'
         } }
     ]);

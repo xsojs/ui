@@ -5,9 +5,16 @@ const vars = {
     tertiary: '#19D1B5',
     background: '#2D2E30',
     backgroundDark: '#1C1D1F',
+    header: {
+        height: "75px",
+        background: "#0E1116",
+    },
     aside: {
-        width: 300
-    }
+        width: "250px"
+    },
+    footer: {
+        background: "#0E1116",
+    },
 }
 
 export default vars;

@@ -4,8 +4,10 @@ import vars from "../../styles/vars";
 const style = {
     main: {
         ...theme.page,
-        minHeight: 'calc(100vh - 285px)',
-        width: '100%',
+        paddingTop: `calc(${vars.header.height} + 10px)`,
+        paddingLeft: `calc(${vars.aside.width} + 10px)`,
+        paddingRight: `calc(${vars.aside.width} + 10px)`,
+        minHeight: `100vh`,
     }
 };
 

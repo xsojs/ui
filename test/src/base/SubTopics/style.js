@@ -4,8 +4,9 @@ const style = {
     container: {
         position: "fixed",
         overflow: "auto",
+        right: "0",
         top: vars.header.height,
-        borderRight: "2px solid #0E1116",
+        borderLeft: "2px solid #0E1116",
         ...vars.aside,
         height: `calc(100vh - ${vars.header.height})`,
     },
